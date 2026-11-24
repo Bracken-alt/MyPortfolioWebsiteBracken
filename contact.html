@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Author: Nyah | File: contact.html | Date: 11/03/2026 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyah | Contact</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="logo">Nyah</div>
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="playSound()">Home</a></li>
+            <li><a href="projects.html" onclick="playSound()">Projects</a></li>
+            <li><a href="resume.html" onclick="playSound()">Resume</a></li>
+            <li><a href="contact.html" onclick="playSound()">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="section">
+        <h1>Contact</h1>
+        <p>If you’d like to connect, you can reach out using the form below.</p>
+
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Nyah. All rights reserved.</p>
+</footer>
+<audio id="clickSound">
+    <source src="audio/click.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const sound = document.getElementById("clickSound");
+
+document.querySelectorAll("input, textarea").forEach(field => {
+    field.addEventListener("click", () => {
+        sound.currentTime = 0;
+        sound.play();
+    });
+});
+</script>
+</body>
+</html>
