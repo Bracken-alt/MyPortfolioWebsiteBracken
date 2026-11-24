@@ -1,0 +1,227 @@
+/*
+Author: Nyah
+Date: 11/03/2026
+File Name: style.css
+*/
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and global styles */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(to left, #fe9972, #ffe5dc);
+    color: #341509;
+}
+
+/* Layout */
+.site-header {
+    background: linear-gradient(to right, #341509, #a22c02);
+    color: #ffe5dc;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin: 0.5rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffe5dc;
+    font-size: 1rem;
+    position: relative;
+}
+
+nav a.active {
+    font-weight: 600;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #fe9972;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:focus {
+    outline: 3px solid #fe9972;
+    outline-offset: 4px;
+}
+
+/* Main content */
+main {
+    padding: 1.5rem;
+}
+
+.section {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+}
+
+.section h1,
+.section h2 {
+    margin-bottom: 0.75rem;
+}
+
+.section p,
+.section ul {
+    margin-bottom: 1rem;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    margin-bottom: 0.75rem;
+}
+
+/* Projects grid */
+.projects-grid {
+    display: block;
+}
+
+.project-card {
+    background-color: #a22c02;
+    color: #ffe5dc;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 1px solid #000;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+}
+
+.project-card:focus {
+    outline: 3px solid #fe9972;
+    outline-offset: 4px;
+}
+
+/* Contact form */
+.contact-form {
+    max-width: 600px;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #341509;
+    font: inherit;
+}
+
+.contact-form button {
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: #a22c02;
+    color: #ffe5dc;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-form button:hover {
+    background-color: #341509;
+    transform: translateY(-1px);
+}
+
+.contact-form button:focus {
+    outline: 3px solid #fe9972;
+    outline-offset: 3px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 1rem;
+    color: #341509;
+}
+
+/* Tablet layout */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .hero img {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+    .hero img {
+        width: 40%;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
